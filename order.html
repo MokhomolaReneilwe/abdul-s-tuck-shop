@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Online - Abdul's Tuck Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="Abdul's Logo" class="logo">
+    <h1>Abdul's Tuck Shop</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="order.html" class="active">Order Online</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Place Your Order</h2>
+
+    <!-- ✅ Single Form -->
+    <form class="order-form" onsubmit="
+      if (validateOrderForm()) {
+        confirmOrder(document.getElementById('name').value);
+        return true;
+      } else {
+        return false;
+      }
+    ">
+
+      <!-- Name -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Item -->
+      <label for="item">Item:</label>
+      <select id="item" name="item" required>
+        <option value="">-- Select an item --</option>
+        <option value="Milk">Milk</option>
+        <option value="Bread">Bread</option>
+        <option value="Eggs">Eggs</option>
+        <option value="Flour">Flour</option>
+        <option value="Sugar">Sugar</option>
+      </select>
+
+      <!-- Quantity -->
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
+
+      <!-- Payment Method -->
+      <label>Payment Method:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="payment" value="Cash"> Cash</label>
+        <label><input type="radio" name="payment" value="Credit Card"> Credit Card</label>
+      </div>
+
+      <!-- Delivery Options -->
+      <label>Delivery Options:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="delivery" value="Delivery"> Delivery</label>
+        <label><input type="checkbox" name="delivery" value="Collect"> Collect</label>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="button" onclick="calculateTotal(
+          document.getElementById('item').value,
+          parseInt(document.getElementById('quantity').value)
+        )">Calculate Total</button>
+         <button type="reset">Clear</button>
+        <button type="button" onclick="window.location.href='index.html'">Exit</button>
+      </div>
+<!-- Total Message Display -->
+<div id="totalMessage" class="total-message"></div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Abdul's Tuck Shop</p>
+    <div class="social-icons">
+      <img src="call icon.webp" alt="Phone">
+      <img src="email.webp" alt="Email">
+      <img src="facebook.webp" alt="Facebook">
+    </div>
+  </footer>
+
+</body>
+</html>

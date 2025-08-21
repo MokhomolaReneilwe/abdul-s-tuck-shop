@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header with Logo and Title -->
+  <header>
+    <div class="branding">
+      <img src="logo.png" alt="Abdul's Tuck Shop Logo" class="logo-img">
+      <h1 class="site-title">Abdul's Tuck Shop</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html">Order Online</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="contact-form">
+  <h2>Contact Us</h2>
+  <form onsubmit="return submitContactForm()">
+    <label for="contactName">Name:</label>
+    <input type="text" id="contactName" name="contactName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Submit</button>
+        <button type="button" onclick="window.location.href='index.html'">Exit</button>
+  </form>
+    </section>
+
+    <section class="business-info">
+      <h3>Business Info</h3>
+      <p><strong>Phone:</strong> +27 15 789 0091</p>
+      <p><strong>Email:</strong> info@abdulstuckshop.co.za</p>
+      <p><strong>Address:</strong> Namakgale Zone B</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Abdul's Tuck Shop</p>
+    <div class="social-media">
+      <p>Contact us on social media</p>
+      <!-- Add icons or links here -->
+       <img src="call icon.webp" alt="Phone">
+      <img src="email.webp" alt="Email">
+      <img src="facebook.webp" alt="Facebook">
+    </div>
+  </footer>
+
+</body>
+</html>

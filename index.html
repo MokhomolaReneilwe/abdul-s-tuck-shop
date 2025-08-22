@@ -2,70 +2,6 @@
 <html lang="en"> 
 <head>
   <meta charset="UTF-8">
-    <title>Login Form </title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <nav>
-  <a href= "index.html"> home</a>
-</nav>
-  <h2>Login</h2>
-  <form id="loginForm" novalidate>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br>
-    <div id="emailError" class="error"></div>
-
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <div id="passwordError" class="error"></div>
-
-    <button type="submit">Login</button>
-  </form>
-
-  <script>
-    var form = document.getElementById('loginForm');
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
-    var emailError = document.getElementById('emailError');
-    var passwordError = document.getElementById('passwordError');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var valid = true;
-      emailError.textContent = '';
-      passwordError.textContent = '';
-
-      // Email validation
-      if (!email.value || email.value.indexOf('@') === -1) {
-        emailError.textContent = 'Please enter a valid email.';
-        email.focus();
-        valid = false;
-        return;
-      }
-
-      // Password validation
-      var passwordValue = password.value;
-      var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{7,20}$/;
-
-      if (!passwordRegex.test(passwordValue)) {
-        passwordError.textContent = 'Password must be 6–20 characters and include uppercase, lowercase, number, and special character.';
-        password.focus();
-        valid = false;
-        return;
-      }
-
-      if (passwordValue.toLowerCase() === "password") {
-        passwordError.textContent = 'Password cannot be "password".';
-        password.focus();
-        valid = false;
-        return;
-      }
-
-      alert("Log in successful!");
-      window.location.href = "index.html";;
-    });
-  </script>
   <head>
   <title>Abdul's Tuck Shop</title>
   <link rel="stylesheet" href="style.css">
@@ -134,6 +70,7 @@
 </body>
 
 </html>
+
 
 
 
